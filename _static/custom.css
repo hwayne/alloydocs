@@ -1,0 +1,6 @@
+.advanced h1:before, 
+.advanced h2:before, 
+.advanced h3:before, 
+.advanced h4:before {
+    content: "[⋇] ";
+}
