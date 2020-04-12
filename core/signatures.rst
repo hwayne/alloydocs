@@ -91,6 +91,7 @@ Relations *can* refer to the same signature. This is valid:
    sig Node {
      , edge: set Node
    }
+
 .. image:: img/self-relation.png
 
 Alloy can generate models where a relation points to the same atom. For
@@ -201,17 +202,70 @@ some
 
 .. image:: img/some-author.png
 
+disj
+^^^^^^^^^^^
+
+``disj`` can be prepended to any multiplicity to gaurantee that it will be disjoint among all atoms. If we write
+
+.. code:: alloy
+
+  sig Lock {}
+  sig Key {
+    lock: disj one Lock
+  }
+
+Then every key will correspond to a *different* lock. If we instead write
+
+.. code:: alloy
+
+  sig Lock {}
+  sig Key {
+    locks: disj some Lock
+  }
+
+Then every key will correspond to one or more locks, but no two keys will share a lock.
+
+
 seq
 ^^^
 
 See `here <http://alloytools.org/quickguide/seq.html>`__ for more info.
 
 
-.. todo:: 
+.. _field-expressions:
 
-  1. [a] disjunct relations
-  2. [a] Expressions as fields (probably should include ``this``)
+Field Expressions
+~~~~~~~~~~~~~~~~~~~~~~~~
 
+A field can be a simple `expression <expressions>` over other signatures.
+
+.. code:: alloy
+
+  sig Resource {
+    permissions: set (User + Group)
+  }
+
+.. _this:
+
+In addition to full signatures, the expression may contain ``this``, which refers to the specific atom itself.
+
+.. code:: alloy
+
+  sig Node {
+    -- no self loops
+    , edge: set Node - this
+  }
+
+A :dfn:`dependent field` is one where the expression depends on the values of other fields in the atom. The dependencies must be fields defined either in the signature or its `supertype <subtypes>`.
+
+.. code:: alloy
+
+  sig Item {}
+
+  sig Person {
+    , favorite: Item
+    , second: Item - favorite
+  }
 
 .. rst-class:: advanced
 .. _multirelations:
@@ -372,11 +426,9 @@ can do this by using the set union operator on the parent signatures.
 
 ::
 
-   -- TK make this better
+  sig Bill, Client {}
 
-   sig A, B {}
-
-   sig C in A + B {}
+  sig Closed in Bill + Client {}
 
 
 .. _extends:
@@ -467,48 +519,20 @@ Children automatically inherit all of their Parent fields, *and also* can define
 
 .. code:: alloy
 
-   // better example? TK
-   sig A {
-     , a: A
-   }
+  sig Person {}
+  sig Account {
+    , person: Person
+  }
 
-   sig B in A {
-     , c: C
-   }
+  sig PremiumAccount in Account {
+    , billing: Person
+  }
 
-Then all ``A`` atoms will have the ``a`` field, while all ``B`` atoms will have both an ``a`` field and a ``c`` field.
+Then all ``Account`` atoms will have the ``person`` field, while all ``PremiumAccount`` atoms will have both a ``person`` field and a ``billing`` field.
 
-.. NOTE:: This also applies to `implicit facts`. If A has an implicit fact, it automatically applies to B.
+.. NOTE:: This also applies to `implicit facts`. If Account has an implicit fact, it automatically applies to PremiumAccount.
 
 It is not possible redefine a relationship, only to add additional ones.
-
-.. todo::
-
-  .. code:: alloy
-
-     sig A {
-
-     }
-
-     sig B extends A {
-       , a: B
-     }
-
-     sig C extends A {
-       , a: B
-     }
-
-     -- ...
-
-     sig B in A {
-       , a: B
-     }
-
-     sig C in A {
-       , a: B
-     }
-
-
 
 .. rst-class:: advanced
 .. _enums:

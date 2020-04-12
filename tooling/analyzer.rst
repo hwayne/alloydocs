@@ -13,9 +13,10 @@ Configuring the Analyzer
 
 The analyzer converts the model into a SAT expression to solve. Some of the options are configurable. By default you should not need to change any of these- most performance issues are better solved by improving the spec itself. The following all affect the runtime of the analyzer. All of these are under the “Options” toolbar of the IDE:
 
+.. todo:: maximum stack
+
 -  **Allow Warnings:** When “no”, the analyzer will halt if the model has any warnings. Warnings usually, but not always, correspond to errors in the spec.
 -  **Maximum Memory:** How much RAM the analyzer is allowed to use when solving.
--  **Maximum Stack:** [TODO]
 -  **Solver:** The SAT solver to use for finding the model. Different solvers may have different performance on different specs. The SAT model and Kodkod model can also be output to a temporay file here.  There are additional special options for MiniSat with `Unsat Core <unsat-core>`, below.
 -  **Skolem Depth:** see below
 -  **Recursion Depth:** see below

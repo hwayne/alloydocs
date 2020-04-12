@@ -3,17 +3,26 @@ open util/ordering[Time]
 sig Time {}
 
 sig User {
+  -- current place in time
   , at: Page one -> Time
+
+  -- all visited pages
   , history: Page -> Time
 }
 
 sig Page {
+  -- pages reachable from this page
   link: set Page
 }
 
 pred goto[u: User, p: Page, t, t': Time] {
+  -- valid page to change to
   p in u.at.t.link
+
+  -- change pages
   p = u.at.t'
+
+  -- save new page in history
   u.history.t' = u.history.t + p
 }
 

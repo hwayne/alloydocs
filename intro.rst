@@ -34,6 +34,5 @@ Then it will not be rendered. If I used a special ``run`` predicate to
 generate a particular visualization, I put it in a comment.
 
 Anything with a ``[⋇]`` is an advanced topic and unecessary to learn if you're just a beginner.
-Some things are marked as not being necessary for the first version
 
-.. todo:: Issues with the page can be raised here
+Issues with the documentation can be raised `here <https://github.com/hwayne/alloydocs>`__.

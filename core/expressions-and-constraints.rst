@@ -41,7 +41,7 @@ itself or a future ``let`` binding.
 
 .. warning:: 
 
-  As with :ref:`predicate <predicates>` parameters, ``let`` can `shadow <parameter-overrides>` a global value. You can use the ``@`` operator to retrieve the global value.
+  As with :ref:`predicate <predicates>` parameters, ``let`` can `shadow <@>` a global value. You can use the ``@`` operator to retrieve the global value.
 
 .. _implies:
 
@@ -261,6 +261,8 @@ that the following is automatically false if A has any elements:
 
    all x, y: A |
      x.rel != y.rel
+
+.. todo:: call out distinct elements
 
 As we can pick the same element for ``x`` and ``y``. If this is not your
 intention, there are two ways to fix this:

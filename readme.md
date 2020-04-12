@@ -15,7 +15,7 @@ Docs can be built with ``make html``.
 
 ## Development
 
-The repo is [standard Sphinx](https://www.sphinx-doc.org/en/master/intro.html), using reStructured Text. 
+The repo is [standard Sphinx](https://www.sphinx-doc.org/en/master/intro.html), using reStructured Text. Some things might use a bit too much rst as I was getting a feel for what worked and didn't here.
 
 There are two customizations:
 

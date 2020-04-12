@@ -67,6 +67,35 @@ use in expressions and predicates.
    S1 - S2 = {A}
    S1 & S2 = {B}
 
+.. _cartesian-product:
+
+``->`` used as an operator
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Given two sets, ``Set1 -> Set2`` is the *Cartesian product* of the two:
+the set of all relations that map any element of ``Set1`` to any element
+of ``Set2``.
+
+::
+
+   Set1 = {A, B}
+   Set2 = {X, Y, Z}
+
+   Set1 -> Set2 = { 
+     A -> X, A -> Y, A -> Z,
+     B -> X, B -> Y, B -> Z
+   }
+
+As with other operators, a standalone atom is the set
+containing that atom. So we can write ``A -> (X + Y)`` to get
+``(A -> X + A -> Y)``.
+
+.. todo:: 
+  1. it's impossible to construct relations between sets, they're always flattened
+
+  2. this is the only way to construct relations outside of signatures
+
+.. TIP:: ``univ -> univ`` is the set of all possible relations in your model.
 
 .. _integers:
 
@@ -304,37 +333,6 @@ Additional Operators
 
 As mentioned, ``~rel`` is the reverse of ``rel``.
 
-.. _cartesian-product:
-
-``->`` used as an operator
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. todo:: Maybe put this in with the set operators instead of the relation operators
-
-Given two sets, ``Set1 -> Set2`` is the *Cartesian product* of the two:
-the set of all relations that map any element of ``Set1`` to any element
-of ``Set2``.
-
-::
-
-   Set1 = {A, B}
-   Set2 = {X, Y, Z}
-
-   Set1 -> Set2 = { 
-     A -> X, A -> Y, A -> Z,
-     B -> X, B -> Y, B -> Z
-   }
-
-As with other operators, a standalone atom is the set
-containing that atom. So we can write ``A -> (X + Y)`` to get
-``(A -> X + A -> Y)``.
-
-.. todo:: 
-  1. it's impossible to construct relations between sets, they're always flattened
-
-  2. this is the only way to construct relations outside of signatures
-
-.. TIP:: ``univ -> univ`` is the set of all possible relations in your model.
 
 .. _transitive-closure:
 

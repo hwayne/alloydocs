@@ -2,7 +2,7 @@
 Predicates and Functions
 ++++++++++++++++++++++++
 
-.. todo:  do we want to avoid qualified predicates? ... IE predicates of the form ``Signature.pred``.
+.. I'm intentionally leaving out qualified predicates because they don't provide any benefits and add syntax.
 
 .. _predicates:
 
@@ -211,7 +211,6 @@ Implicit Facts
 ------------------
 
 
-.. _this:
 
 You can write a fact as part of a signature. The implicit fact goes
 after the signature definition and relations. Inside of an implicit fact,

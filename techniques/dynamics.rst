@@ -19,7 +19,7 @@ Changing Object Signature
 When only one entity is changing and there is only one instance of the signature to consider, we can place the ordering on the signature itself. Then each atom of that signature represents the state of the entity at a different point in time.
 
 .. literalinclude:: specs/dynamics/light.als
-  :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
+  :caption: Full spec downloadable :download:`here <specs/dynamics/light.als>`
   :lines: 1-9
 
 While there are multiple ``Light`` atoms, they all represent the same physical "traffic light", just at different points in time.
@@ -105,8 +105,29 @@ Information beyond booleans can be encoded with `multirelations`.
 .. todo:: break this up and explain what's going on
 
 .. literalinclude:: specs\dynamics\browsing.als
+  :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
+  :lines: 1-12
+
+Writing ``Page one -> Time`` indicates that for every Person and Time, there is exactly one page. Writing ``Page -> Time`` also any number of pages per person/time.
 
 .. note:: There's no innate reason why we use ``Page -> Time`` instead of ``Time -> Page``. However, making Time the end of the multirelation is conventional.
+
+
+.. literalinclude:: specs\dynamics\browsing.als
+  :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
+  :lines: 13-28
+
+When using multirelations of form ``rel = A -> B -> Time``, we get the value of ``b`` at time ``t`` with ``a.rel.t``
+
+.. literalinclude:: specs\dynamics\browsing.als
+  :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
+  :lines: 29-33
+
+``stay`` is a "stuttering" predicate which makes it valid for a user to not change at the next time step. Without it ``goto`` would have to be true for every single user at every time in the trace.
+
+.. literalinclude:: specs\dynamics\browsing.als
+  :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
+  :lines: 34-
 
 
 Common Issues
@@ -132,7 +153,24 @@ The trace must fully cover what happens to all dynamic signatures. If not, weird
 
 This is true iff *exactly one* User either stays or goes to a valid page. This allows them to do anything that's not covered by the two predicates. A user may go to an unlinked page, or stay on the same page but change their history to include a page they never visited. 
 
-.. todo:: No models found (ordering is exact)
+"No Models Found"
+--------------------------------
+
+
+``ordering`` implicity makes the ordered signature `exact <exactly>` and this cannot be overridden. If a dynamic spec does not exist, it's likely due to this.
+
+::
+
+  open util/ordering[State]
+
+  sig State {}
+
+  run {#State = 2} -- no models
+
+
+.. todo:: 
+  1. Cases where multiple things relating to each other interact, like the ring election spec. So the predicates step on each others toes.
+  2. Writing temporal assertions
 
 Limitations
 ======================
@@ -140,9 +178,8 @@ Limitations
 There are some limitations to what we can model in a dynamic system. 
 
 * Alloy cannot tell if a system has **deadlocked**. A deadlock is when there is no valid next state as part of the trace. If the trace is encoded as a fact, then the entire model is discarded. If the trace is encoded as a predicate, Alloy will provide any model that doesn't match the trace as a counterexample.
-* Alloy cannot test that some property is gauranteed to happen in infinite time.
-
-* Alloy cannot test infinite sequences, or "lassos".
+* Alloy cannot test that some property is guaranteed to happen in infinite time, aka **liveness**.
+* Alloy cannot emulate **fair** dynamic systems.
 
 
 

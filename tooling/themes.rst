@@ -11,7 +11,7 @@ Diagrams produced in the :doc:`visualizer` can be **themed**. Options are:
 
 .. note:: All options will not be changed until you click the “Apply” button.
 
-.. todo:: I'd l;ove to have before and after screenshots for every one of these options, but the tooling doesn't make that automatically generatable.
+.. todo:: I'd love to have before and after screenshots for every one of these options, but the tooling doesn't make that automatically generatable.
 
 General Graph Settings
 ===========================
