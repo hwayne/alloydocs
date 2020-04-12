@@ -1,5 +1,5 @@
-Core
-====
+Language
+========
 
 .. toctree::
   :maxdepth: 2

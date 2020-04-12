@@ -10,7 +10,7 @@ Alloy is a tool for analyzing systems and seeing if they are designed correctly.
 About This Guide
 -------------------
 
-This is tentative proposed documentation for the Alloy language. 
+This is my tentative proposed documentation for the Alloy language. 
 
 **This is not the official Alloy documentation.** It's a staging ground for material that's intended to *become* official documentation, but for now I'm writing this independently, not as part of the alloy board.
 
@@ -36,3 +36,9 @@ generate a particular visualization, I put it in a comment.
 Anything with a ``[⋇]`` is an advanced topic and unecessary to learn if you're just a beginner.
 
 Issues with the documentation can be raised `here <https://github.com/hwayne/alloydocs>`__.
+
+
+About the Author
+---------------------
+
+I'm Hillel. I wrote this because Alloy is a very powerful language but there's no thorough online reference; you have to learn from the official book. I also wrote a `guide to TLA+ <https://www.learntla.com>`__ and have a `blog <https://www.hillelwayne.com>`__ and a `twitter <https://twitter.com/hillelogram>`__. 

@@ -11,7 +11,7 @@ Welcome to the Alloy Documentation!
    :caption: Contents:
 
    intro
-   core/index
+   language/index
    tooling/index
    modules/index
    techniques/index
