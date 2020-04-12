@@ -41,4 +41,4 @@ Issues with the documentation can be raised `here <https://github.com/hwayne/all
 About the Author
 ---------------------
 
-I'm Hillel. I wrote this because Alloy is a very powerful language but there's no thorough online reference; you have to learn from the official book. I also wrote a `guide to TLA+ <https://www.learntla.com>`__ and have a `blog <https://www.hillelwayne.com>`__ and a `twitter <https://twitter.com/hillelogram>`__. 
+I'm Hillel. I also wrote a `guide to TLA+ <https://www.learntla.com>`__ and have a `blog <https://www.hillelwayne.com>`__ and a `twitter <https://twitter.com/hillelogram>`__. 
