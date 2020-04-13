@@ -475,7 +475,7 @@ still the base.
 
 .. code:: alloy
 
-   sig Machine {}
+   abstract sig Machine {}
    sig Broken in Machine {}
 
    sig Server extends Machine {}
