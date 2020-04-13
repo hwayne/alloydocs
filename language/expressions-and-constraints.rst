@@ -332,5 +332,5 @@ You can define a ``some`` quantifier over a relation:
        has_self_loop
    }
 
-You **cannot** use this ``all`` or other quantifiers, and you **cannot**
+You **cannot** use ``all``, or other quantifiers, and you **cannot**
 use higher-order quantifiers in the `evaluator`.

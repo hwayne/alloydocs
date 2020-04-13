@@ -40,7 +40,7 @@ A module can be namespaced by importing ``as`` a name. Namespaces are accessed w
 Parameterized Modules
 =========================
 
-A parameterized module is "generic": it's functions and predicates are defined for some arbitrary signature. When you import a parameterized module, you must pass in a signature. It's functions and predicates are then specialized to be defined for that signature.
+A parameterized module is "generic": its functions and predicates are defined for some arbitrary signature. When you import a parameterized module, you must pass in a signature. Its functions and predicates are then specialized to be defined for that signature.
 
 .. code:: alloy
 

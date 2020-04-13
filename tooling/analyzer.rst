@@ -17,7 +17,7 @@ The analyzer converts the model into a SAT expression to solve. Some of the opti
 
 -  **Allow Warnings:** When “no”, the analyzer will halt if the model has any warnings. Warnings usually, but not always, correspond to errors in the spec.
 -  **Maximum Memory:** How much RAM the analyzer is allowed to use when solving.
--  **Solver:** The SAT solver to use for finding the model. Different solvers may have different performance on different specs. The SAT model and Kodkod model can also be output to a temporay file here.  There are additional special options for MiniSat with `Unsat Core <unsat-core>`, below.
+-  **Solver:** The SAT solver to use for finding the model. Different solvers may have different performance on different specs. The SAT model and Kodkod model can also be output to a temporary file here.  There are additional special options for MiniSat with `Unsat Core <unsat-core>`, below.
 -  **Skolem Depth:** see below
 -  **Recursion Depth:** see below
 -  **Record the Kodkod input/output:** when ``true``, the Kodkod output for the run can be seen by clicking the *Predicate* link in the output.

@@ -18,7 +18,7 @@ Graph provides predicates on relations over a parameterized signature.
     dag[edge]
   }
 
-Notice that graph is parameterized on the **signature**, but the predicate takes in a **relation**. This is so that you can apply multiple the predicates to multiple different relations, or different subsets of the same relation. The graph module uses some specific terminology:
+Notice that graph is parameterized on the **signature**, but the predicate takes in a **relation**. This is so that you can apply multiple predicates to multiple different relations, or different subsets of the same relation. The graph module uses some specific terminology:
 
 This means that in a completely unconnected graph, every node is both a root and a leaf.
 

@@ -138,6 +138,6 @@ functions or predicates in the evaluator, only evaluate `expressions`.
 Projection
 ----------
 
-Projections break on a complex model into multiple subviews.  Instead of showing relations from the projected signature, each relation will be represented as a text label on the corresponding targets of the relation.
+Projections break a complex model into multiple subviews.  Instead of showing relations from the projected signature, each relation will be represented as a text label on the corresponding targets of the relation.
 
 .. todo:: The current example of the visualizer doesn't have projections, find a better example.
