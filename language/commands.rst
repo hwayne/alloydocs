@@ -103,7 +103,7 @@ You can also call ``check`` with an ad-hoc constraint:
 Scopes
 ======
 
-All alloy models are **bounded**: they are must have a maximum possible
+All alloy models are **bounded**: they must have a maximum possible
 size. If not specified, the analyzer will assume that there may be up to
 three of each top-level signature and any number of relations. This is
 called the **scope**, and can be changed for each command.
@@ -132,7 +132,7 @@ If you are placing scopes on all of the signatures, the ``for N except``
 is unnecessary: the last command can be written as
 ``run {} for 2 A, 3 B``.
 
-.. TIP:: When using `Arithmatic Operators <integers>`, you can specify ``Int`` like any other signature:
+.. TIP:: When using `Arithmetic Operators <integers>`, you can specify ``Int`` like any other signature:
 
   .. code:: alloy
 
