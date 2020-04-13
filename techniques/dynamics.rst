@@ -104,7 +104,7 @@ Information beyond booleans can be encoded with `multirelations`.
 
 .. todo:: break this up and explain what's going on
 
-.. literalinclude:: specs\dynamics\browsing.als
+.. literalinclude:: specs/dynamics/browsing.als
   :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
   :lines: 1-12
 
@@ -113,19 +113,19 @@ Writing ``Page one -> Time`` indicates that for every Person and Time, there is 
 .. note:: There's no innate reason why we use ``Page -> Time`` instead of ``Time -> Page``. However, making Time the end of the multirelation is conventional.
 
 
-.. literalinclude:: specs\dynamics\browsing.als
+.. literalinclude:: specs/dynamics/browsing.als
   :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
   :lines: 13-28
 
 When using multirelations of form ``rel = A -> B -> Time``, we get the value of ``b`` at time ``t`` with ``a.rel.t``
 
-.. literalinclude:: specs\dynamics\browsing.als
+.. literalinclude:: specs/dynamics/browsing.als
   :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
   :lines: 29-33
 
 ``stay`` is a "stuttering" predicate which makes it valid for a user to not change at the next time step. Without it ``goto`` would have to be true for every single user at every time in the trace.
 
-.. literalinclude:: specs\dynamics\browsing.als
+.. literalinclude:: specs/dynamics/browsing.als
   :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
   :lines: 34-
 
