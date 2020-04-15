@@ -7,4 +7,5 @@ Tooling
   analyzer
   visualizer
   themes
+  markdown
 
