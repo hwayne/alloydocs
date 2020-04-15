@@ -52,7 +52,7 @@ When used in conjunction with ``else``, ``implies`` acts as a
 conditional. ``p implies A else B`` returns A if p is true and B if p is
 false. ``p`` must be a boolean expression.
 
-If A and B are boolean expressions, then this acts as a constraint. The ``else`` can be left out if using ``implies`` as a constaint. See `here <implies constraint>` for details.
+If A and B are boolean expressions, then this acts as a constraint. The ``else`` can be left out if using ``implies`` as a constraint. See `below <implies constraint>` for details.
 
 .. _constraints:
 
