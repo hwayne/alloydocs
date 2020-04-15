@@ -103,7 +103,7 @@ Integers
 ------------
 
 Alloy has limited support for integers. To enforce bounded models, the
-numberical range is finite. By default, Alloy uses models with 4-bit
+numerical range is finite. By default, Alloy uses models with 4-bit
 signed integers: all integers between ``-8`` and ``7``. If an arithmetic
 operation would cause this to overflow, then the predicate is
 automatically declared false. In the :ref:`evaluator`, however, it will wrap the overflowed number.
@@ -112,7 +112,7 @@ automatically declared false. In the :ref:`evaluator`, however, it will wrap the
 
   The numerical range can be changed by placing a :ref:`scope <scopes>` on ``Int``. The number of the scope is the number of bits in the signed integers. For example, if the scope is ``5 Int``, the model will have all integers between ``-16`` and ``15``.  
 
-All arithmatic operators are over the given model’s numeric range. To
+All arithmetic operators are over the given model’s numeric range. To
 avoid conflict with set and relation operators, the arithmetic operators
 are written as :ref:`functions`:
 
@@ -351,7 +351,7 @@ example:
 ``N.edge`` is the set of all nodes that ``N`` connects to.
 ``N.edge.edge`` is the set of all nodes that an edge of ``N`` connects
 to. ``N.edge.edge.edge`` is the set of all nodes that are an edge of an
-edge of N, ad infinitum. If we want every node that connected to ``N``,
+edge of N, ad infinitum. If we want every node that is connected to ``N``,
 this is called the transitive closure and is written as ``N.^edge``.
 
 ``^`` does *not* include the original atom unless it’s transitively

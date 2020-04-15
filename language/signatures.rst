@@ -412,7 +412,6 @@ Parent atoms may or may not also be a Child. This is also called a
    sig Online in Machine {}
 
 In this case, any Machine can also be Broken, Online, both, or neither.
-neither. 
 
 .. rst-class:: advanced
 .. _subtype-+:
@@ -462,7 +461,7 @@ Something can belong to both ``extend`` and ``in`` subtypes.
    sig Server extends Machine {}
    sig Client extends Machine {}
 
-A machine can be both a Server and Broken, or a Client and Broken, or just one of the three, or none at all.
+A Machine can be both a Server and Broken, or a Client and Broken, or just one of the three, or none at all.
 
 .. _abstract:
 
@@ -475,7 +474,7 @@ still the base.
 
 .. code:: alloy
 
-   sig Machine {}
+   abstract sig Machine {}
    sig Broken in Machine {}
 
    sig Server extends Machine {}
@@ -555,7 +554,7 @@ them.
 .. tip::
 
   If you want to use an enumeration with properties, you can emulate this
-  by using it ``one`` and signature extensions.
+  by using ``one`` and signature extensions.
 
   .. code:: alloy
 

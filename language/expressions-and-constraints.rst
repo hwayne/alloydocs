@@ -342,4 +342,4 @@ When using a `check` command, you can define ``all`` and ``no`` quantifiers over
     
   check no_self_loops
 
-You **cannot** use this ``all`` or ``no`` in a run command or use ``some`` in a check command. You **cannot** use higher-order quantifiers in the `evaluator` regardless of the command.
+You **cannot** use ``all`` or ``no`` in a run command or use ``some`` in a check command. You **cannot** use higher-order quantifiers in the `evaluator` regardless of the command.
