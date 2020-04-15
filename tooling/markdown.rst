@@ -11,7 +11,7 @@ For an example of an Alloy Markdown file, see Peter Kriens's `Dining Philosopher
 .. _Dining Philosophers: https://github.com/pkriens/pkriens.github.io/blob/master/philosophers.md
 
 Header
-~~~~~~
+======
 
 A Markdown Alloy file must start with a YAML header: three dashes on the first line, followed by fields and values in YAML format, followed by three more dashes. For example:
 
@@ -23,7 +23,7 @@ A Markdown Alloy file must start with a YAML header: three dashes on the first l
 
 
 Alloy sections
-~~~~~~~~~~~~~~
+==============
 
 After the YAML header, the Alloy parser interprets all text as Markdown. To start an Alloy section, use `fenced code blocks`_ with ``alloy`` as the language identifier. For example:
 
@@ -48,7 +48,7 @@ After the YAML header, the Alloy parser interprets all text as Markdown. To star
 
 
 GitHub Pages support
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 The YAML header can be used in conjunction with `GitHub Pages`_. GitHub Pages allow you to maintain a website via Github, the YAML header is then used to encode metadata information such as title and layout. This `example website`_ shows the dining philosophers example rendered using Jekyll_ and served from GitHub Pages.
 
