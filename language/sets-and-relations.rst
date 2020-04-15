@@ -256,7 +256,7 @@ Return every element that elements in ``Set`` map to, via ``rel``. This also wor
    (U1 + U2).belongs_to = {G1, G2}
 
 
-.. Tip:: In this case, we can find all groups in the relation with ``User.belongs_to``. However, some relations may mix different types of atoms. In that case ``univ.rel`` is the domain of ``rel``, and ``rel.univ`` is the range of ``rel``.
+.. Tip:: In this case, we can find all groups in the relation with ``User.belongs_to``. However, some relations may mix different types of atoms. In that case ``univ.~rel`` is the domain of ``rel`` and ``univ.rel`` is the range of ``rel``.
 
 For `multirelations`, this will return the "tail" of the relation. Eg if ``rel = A -> B -> C``, then ``A.rel = B -> C``.
 
@@ -361,13 +361,15 @@ cycle containing ``N``. If we want to also include ``N``, use
 
 ``^`` operates on the relationship, so ``^edge`` is also itself a
 relationship and can be manipulated like any other. We can write both
-``~^edge`` and ``~^edge``. It also works on arbitrary relationships.
+``~^edge`` and ``^~edge``. It also works on arbitrary relationships.
 ``U1.^(belongs_to.~belongs_to)`` is the set of people that share a group
 with ``U1``, or share a group with people who share a group with ``U1``,
 ad infinitum.
 
 .. warning::
   By itself ``*edge`` will include ``iden``! ``*edge = ^edge + iden``. For best results only use ``*`` immediately before joining the closure with another set.
+
+.. rst-class:: advanced
 
 Advanced Operators
 ----------------------
@@ -391,15 +393,13 @@ given a set S, we can map every element to itself by doing
 ``++``
 ~~~~~~
 
-``rel1 ++ rel2`` is the union of the two relations, with one exception:
-any shared relationships are *overwritten*. Think of it like merging two
-dictionaries.
+``rel1 ++ rel2`` is the union of the two relations, with one exception: if any relations in ``rel1`` that share a "key" with a relation in ``rel2`` are dropped.  Think of it like merging two dictionaries.
 
 Formally speaking, we have
 
 .. code:: alloy
 
-   rel1 ++ rel2 = rel1 - (univ.rel2 <: rel2) + rel2
+   rel1 ++ rel2 = rel1 - (rel2.univ <: rel1) + rel2
 
 Some examples of ``++``:
 
@@ -411,6 +411,8 @@ Some examples of ``++``:
    (A -> B + B -> C) ++ (A -> A) = (A -> A + B -> C)
 
 It’s mostly useful for modeling `Time <dynamics>`.
+
+.. Note:: When using multirelations the two relations need the same arity, and it overrides based on only the first element in the relations.
 
 .. rst-class:: advanced
 .. _set-comprehensions:

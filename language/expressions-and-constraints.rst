@@ -52,7 +52,7 @@ When used in conjunction with ``else``, ``implies`` acts as a
 conditional. ``p implies A else B`` returns A if p is true and B if p is
 false. ``p`` must be a boolean expression.
 
-``=>`` can also be used as a `constraint <implies constraint>`.
+If A and B are boolean expressions, then this acts as a constraint. The ``else`` can be left out if using ``implies`` as a constaint. See `here <implies constraint>` for details.
 
 .. _constraints:
 
@@ -71,7 +71,7 @@ A bar expression is one of the form:
      some x: Set | 
        expr
 
-In this context, the expression is true iff ``expr`` is true.
+In this context, the expression is true iff ``expr`` is true. The newline is optional.
 
 Paragraph expressions
 ---------------------
@@ -179,7 +179,7 @@ The first three are self-explanatory. The other two are covered below:
 
 ``P implies Q`` is true if Q is true whenever P is true. If P is true
 and Q is false, then ``P implies Q`` is false. If P is false, then
-``P implies Q`` is automatically true.
+``P implies Q`` is automatically true. ``P implies Q else T`` is true if P and Q are true or if P is false and T is true.
 
 (Consider the statement ``x > 5 implies x > 3``. If we pick ``x = 4``,
 then we have ``false implies true``).
@@ -315,7 +315,7 @@ multiple clauses.
 Relational Quantifiers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can define a ``some`` quantifier over a relation:
+When using a `run` command, you can define a ``some`` quantifier over a relation:
 
 .. code:: alloy
 
@@ -332,5 +332,14 @@ You can define a ``some`` quantifier over a relation:
        has_self_loop
    }
 
-You **cannot** use this ``all`` or other quantifiers, and you **cannot**
-use higher-order quantifiers in the `evaluator`.
+When using a `check` command, you can define ``all`` and ``no`` quantifiers over relations:
+
+.. code:: alloy
+   
+  assert no_self_loops {
+	  no e: edge | e = ~e
+	}
+    
+  check no_self_loops
+
+You **cannot** use this ``all`` or ``no`` in a run command or use ``some`` in a check command. You **cannot** use higher-order quantifiers in the `evaluator` regardless of the command.
