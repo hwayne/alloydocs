@@ -20,7 +20,7 @@ pred changed[k: Key, t: Time] {
   press[k, t] or release[k, t]
 }
 
-face Trace {
+fact Trace {
   no first.~pressed
   all t: Time - last |
     some k: Key {
