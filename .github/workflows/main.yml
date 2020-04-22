@@ -1,0 +1,33 @@
+name: "Build Docs & Push Github Pages"
+
+on: 
+  push:
+    branches: [ master ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    
+    - name: "Setup Python on Ubuntu"
+      run: |
+        sudo apt update -y && sudo apt upgrade
+        sudo apt install -y python3.7 python3-setuptools python3-wheel python3-pip
+        pip3 install pipenv --user
+
+    - name: "Checkout"
+      uses: actions/checkout@v1
+
+    - name: "Build Docs"
+      run: |
+        python3 -m pipenv --three
+        python3 -m pipenv sync
+        source $(python3 -m pipenv --venv)/bin/activate
+        make github
+      
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs 
+     

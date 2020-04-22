@@ -186,7 +186,7 @@ epub_exclude_files = ['search.html']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 # We can't pass the -D flag in ReadTheDocs, so we instead customize to their specific environment
-if os.environ.get('READTHEDOCS'):
+if os.environ.get('READTHEDOCS') or os.environ.get('GITHUB_ACTIONS'):
     todo_include_todos = False
 else:
     todo_include_todos = True
