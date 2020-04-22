@@ -23,7 +23,7 @@ jobs:
         python3 -m pipenv --three
         python3 -m pipenv sync
         source $(python3 -m pipenv --venv)/bin/activate
-        make github
+        READTHEDOCS=1 make github
       
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
