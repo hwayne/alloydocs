@@ -58,7 +58,7 @@ For all of these options, we assume the relation is ``rel: A -> B``
 - **Influence Layout**: If True, the visualizer will try to account for the arrows when laying out the node graph. If False, the visualizer will first lay out the graph, and then draw the relation. |dt|
 - **Weight**: The visualizer will try to minimize the weights of the larger arrows first.
 - **Layout Backwards**: Layout the graph as if the relation was ``B -> A``. The final layout will still show the arrow as ``A -> B``. |df|
-- **Merge Arrows**: If True, the relationship ``A -> B + B -> A`` with be represented as a single double-sided arrow. If false, the relationship is represented as two single-sided arrows. |dt|
+- **Merge Arrows**: If True, the relationship ``A -> B + B -> A`` will be represented as a single double-sided arrow. If false, the relationship is represented as two single-sided arrows. |dt|
 
 .. _reusing-themes:
 
