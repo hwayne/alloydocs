@@ -205,7 +205,7 @@ some
 disj
 ^^^^^^^^^^^
 
-``disj`` can be prepended to any multiplicity to gaurantee that it will be disjoint among all atoms. If we write
+``disj`` can be prepended to any multiplicity to guarantee that it will be disjoint among all atoms. If we write
 
 .. code:: alloy
 
