@@ -13,25 +13,24 @@ you want. Here are some example signatures:
 -  File
 -  Person
 -  Msg
--  Joke
 -  Pair
 
-Each model will have some number of each signature, called **atoms**.
+Alloy can generate models that have elements of each signature, called **atoms**.
 Take the following spec:
 
 .. code:: alloy
 
    sig A {}
 
-The following would be a valid model:
+The following would be an example generated model:
 
 .. image:: img/sig-a.png
 
 Here we have two atoms ``A$1`` and ``A$0``. Both count as instances of the ``A`` signature. See `visualizer <Visualizer>` for more on how to read the visualizations.
 
 Usually we care about the relationships between the parts of our
-systems. We don’t just care that there are people and accounts, we care
-which people have which accounts. We do this by adding **relations**
+systems. We don’t just care that there are people and cars, we care
+which people have which cars. We do this by adding **relations**
 inside of the signature body.
 
 .. code:: alloy
@@ -79,22 +78,26 @@ Relations
 ---------
 
 The body of a signature is a list of **relations**, which show how the
-signatures are connected to each other.
+signatures are connected to each other. A relation in the body of a signature is also called a **field**.
+
+.. todo:: Rename use consistent "field" terminology here
 
 Relations are separated by a comma. The list can also start and end with
-a comma. Standard convention is to prefix every relation with a comma.
+a comma. Relations do not have to be on separate lines, as long as they are separated by commas.
 
 Relations *can* refer to the same signature. This is valid:
 
 .. code:: alloy
 
    sig Node {
-     , edge: set Node
+     , edges: set Node
    }
+
+.. todo:: Change image to use the new 'edges' instead of 'edge'
 
 .. image:: img/self-relation.png
 
-Alloy can generate models where a relation points to the same atom. For
+Alloy can generate models where a relation points from an atom to itself, aka a "self-loop". For
 this reason we often want to add contraints to our model, such as
 :ref:`facts` or :ref:`predicates`.
 
@@ -114,7 +117,7 @@ Multiplicity
 
 Each relation has a **multiplicity**, which represents how many atoms it
 can include. If you do not include a multiplicity, it’s assumed to be
-``one``.
+``one`` for individual relations and ``set`` for `multirelations`.
 
 .. All of the images here are at ~170ish pixel height. All the images should be standardized at some point.
 
@@ -253,7 +256,7 @@ In addition to full signatures, the expression may contain ``this``, which refer
 
   sig Node {
     -- no self loops
-    , edge: set Node - this
+    , edges: set Node - this
   }
 
 A :dfn:`dependent field` is one where the expression depends on the values of other fields in the atom. The dependencies must be fields defined either in the signature or its `supertype <subtypes>`.
@@ -287,7 +290,7 @@ Signatures can have multirelations as fields:
    }
 
 In this case ``access`` is a ternary relationship, where each element of
-``access`` is a relation of form ``Person -> Card -> Door``. Using the `dot operator <.>`, if ``access = P -> C -> D``, then ``P.access = C -> D`` and ``access.D = P -> C``.
+``access`` is a relation of form ``Person -> Card -> Door``.
 
 Multirelations have a special kind of multiplicity:
 
@@ -299,7 +302,7 @@ This says that each member of ``A`` is mapped to ``n`` elements of B,
 and ``m`` elements of ``A`` map to each element of B. If not specified,
 the multiplicities are assumed to be ``set``.
 
-As an aide, use the following table:
+As an aid, use the following table:
 
 +-------------+-------------+------------------------------------------+
 | m           | n           | Meaning                                  |
@@ -468,9 +471,7 @@ A Machine can be both a Server and Broken, or a Client and Broken, or just one o
 abstract
 ^^^^^^^^
 
-If you make a signature ``abstract``, then all instances of the
-signature will be extensions, and there will be no signatures that are
-still the base.
+If you make a signature ``abstract``, then all atoms of the signature will belong to extensions. There will be no atoms that are just the supertype and not any of the subtypes.
 
 .. code:: alloy
 
@@ -506,7 +507,16 @@ All subtypes are also their parent type. So if we have
     , c: C
    }
 
-Then the ``b`` relation can include ``A -> C``, but ``c`` **cannot** include ``A -> B``.
+Then the ``b`` relation can map to atoms of ``C``, and ``c`` cannot map to elements of ``B`` that are not also in ``C``.
+
+.. tip::
+
+  If you want to map to elements of ``B`` that are not also in ``C``, you can write::
+
+    sig A {
+      , b: B - C
+    }
+
 
 .. rst-class:: advanced
 .. _child relations:

@@ -9,9 +9,9 @@ The **Alloy Analyzer** is the tool that actually checks your spec.
 Configuring the Analyzer
 =====================================
 
-.. todo:: make a link to SAT, explain what Kodkod is
+.. todo:: explain what Kodkod is
 
-The analyzer converts the model into a SAT expression to solve. Some of the options are configurable. By default you should not need to change any of these- most performance issues are better solved by improving the spec itself. The following all affect the runtime of the analyzer. All of these are under the “Options” toolbar of the IDE:
+The analyzer converts the model into a `SAT formula <https://en.wikipedia.org/wiki/Boolean_satisfiability_problem>`__ to solve. Some of the options are configurable. By default you should not need to change any of these- most performance issues are better solved by improving the spec itself. The following all affect the runtime of the analyzer. All of these are under the “Options” toolbar of the IDE:
 
 .. todo:: maximum stack
 

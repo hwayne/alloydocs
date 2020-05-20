@@ -12,11 +12,9 @@ Sets
 
 A set is a collection of unique, unordered elements. All Alloy
 expressions use sets of atoms and :ref:`relations`. All
-elements of a set must have the same arity, but can otherwise freely mix
-types of elements.
+elements of a set must all be either atoms, relations, or multirelations of the same arity, but may be different types of each category. 
 
-Adding a signature automatically defines the set of all atoms in that
-signature. Given
+In expressions, the name of the signature is equal to the set of all atoms in that signature. The same is true for signature fields. Given
 
 .. code:: alloy
 
@@ -203,7 +201,8 @@ user maps to both ``G1`` and ``G2``.
 
 
 ..
-
+  Generating spec:
+  
   ::
 
      abstract sig Group {}
@@ -248,7 +247,7 @@ parsed as ``(a.b).c``, not ``a.(b.c)``.
 ``Set.rel``
 ~~~~~~~~~~~
 
-Return every element that elements in ``Set`` map to, via ``rel``. This also works for individual atoms.
+If ``Set`` is an individual atom, this returns all elements that said atom maps to. If ``Set`` is more than one atom, this gets all elements they map to.
 
 ::
 
@@ -289,6 +288,11 @@ given
 
 In our case with Users and Groups, ``belongs_to.~belongs_to`` maps every
 User to every other user that shares a group.
+
+
+.. note:: The operator isn't overloaded; it's the same operator with the same semantics for both ``Set.rel`` and ``rel1.rel2``. 
+
+  .. todo:: more explaining of this better
 
 .. _[]:
 
@@ -386,7 +390,17 @@ restriction*, and works similarly: ``rel :> Set`` is all the elements of
 
 This is mostly useful for directly manipulating relations. For example,
 given a set S, we can map every element to itself by doing
-``S <: iden``.
+``S <: iden``. We can also use restrictions to disambiguate overloaded fields. If we have
+
+.. code:: alloy
+
+  abstract sig Node {
+    , edges: set Node
+  }
+
+  some sig Red, Blue extends Node {}
+
+Then ``Blue <: edges :> Red`` is the set of all edges from ``Blue`` nodes to ``Red`` ones.
 
 .. _++:
 

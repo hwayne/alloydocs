@@ -61,7 +61,7 @@ Finds an example satisfying the ad-hoc constraint in the braces.
 
 .. code:: alloy
 
-   some_self_loop:run {some n: Node | self_loop[n]}
+   some_self_loop: run {some n: Node | self_loop[n]}
 
 
 .. _check:

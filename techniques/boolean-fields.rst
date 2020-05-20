@@ -52,4 +52,4 @@ Then the boolean can be tested with ``some a.premium``, and the set of all premi
 The ``Boolean`` module
 ---------------------------
 
-If subtyping is insufficient, you can also use the :mod:`boolean` module. This is generlaly not recommended.
+If subtyping is insufficient, you can also use the :mod:`boolean` module. This is generally not recommended.
