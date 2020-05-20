@@ -125,12 +125,12 @@ Evaluator
 
 The evaluator can be used to run arbitrary commands against the existing
 model. It cannot create new signatures, only investigate the current
-signatures and relations you currently have. You cannot define a new
+signatures and relations you currently have. You cannot define new
 functions or predicates in the evaluator, only evaluate `expressions`.
 
 .. image:: img/evaluator.png
 
-.. Note:: While the evaluator can evaluate most expressions, it does not have the full capacity of the alloy analyzer. For example, polymorphic domain restriction will not work. Additionally, integer overflow will wrap instead of raise an error.
+.. Note:: While the evaluator can evaluate most expressions, it does not have the full capacity of the alloy analyzer. For example, polymorphic domain restriction will not work. Additionally, integer overflow will wrap instead of raising an error.
 
 .. rst-class:: advanced
 .. _projections:
