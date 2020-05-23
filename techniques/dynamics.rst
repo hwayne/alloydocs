@@ -108,7 +108,7 @@ Information beyond booleans can be encoded with `multirelations`.
   :caption: Full spec downloadable :download:`here <specs/dynamics/browsing.als>`
   :lines: 1-12
 
-Writing ``Page one -> Time`` indicates that for every Person and Time, there is exactly one page. Writing ``Page -> Time`` also any number of pages per person/time.
+Writing ``Page one -> Time`` indicates that for every User and Time, there is exactly one page. Writing ``Page -> Time`` also any number of pages per user/time.
 
 .. note:: There's no innate reason why we use ``Page -> Time`` instead of ``Time -> Page``. However, making Time the end of the multirelation is conventional.
 
