@@ -7,7 +7,14 @@ naturals
 
 Emulates natural (non-negative) numbers.
 
+This is an utility with functions and predicates for using the set of
+nonnegative integers (`0, 1, 2, . . .`). The number of naturals present 
+in an analysis will be equal to the scope on Natural. Specifically, if 
+the scope on Natural is `N`, then the naturals `0` through `N-1` will 
+be present.
+
 .. code:: alloy
+
   open util/natural
   
   fun sum[a: Natural, b: Natural]: Natural {
@@ -16,9 +23,11 @@ Emulates natural (non-negative) numbers.
   
   run show for 3
 
-In Alloy's evaluator you may type the following:
+To try this module out, in Alloy Analyzer's evaluator, you may invoke the 
+function defined above as follows:
 
 .. code:: alloy
+
   sum [natural/Natural1, natural/Natural1]
     {natural/Natural$2}
 
@@ -29,29 +38,72 @@ In Alloy's evaluator you may type the following:
 Functions
 ==========
 
-.. code:: alloy
-  fun inc [n: Natural] : lone Natural { ord/next[n] }
-  fun dec [n: Natural] : lone Natural { ord/prev[n] } // returns n – 1 
-  
-  fun add [n1, n2: Natural] : lone Natural { // returns n1 + n2
-    {n: Natural | #ord/prevs[n] = #ord/prevs[n1] + #ord/prevs[n2]} 
-  }
-  fun sub [n1, n2: Natural] : lone Natural { // returns n1 - n2
-    {n: Natural | #ord/prevs[n1] = #ord/prevs[n2] + #ord/prevs[n]}
-  }
-  fun mul [n1, n2: Natural] : lone Natural { // returns n1 * n2
-    {n: Natural | #ord/prevs[n] = #(ord/prevs[n1]->ord/prevs[n2])} 
-  }
-  fun div [n1, n2: Natural] : lone Natural { // returns n1 / n2
-    {n: Natural | #ord/prevs[n1] = #(ord/prevs[n2]->ord/prevs[n])}
-  }
-  
-  pred gt [n1, n2: Natural] { ord/gt [n1, n2] } // greater than
-  pred lt [n1, n2: Natural] { ord/lt [n1, n2] } // less than
-  pred gte [n1, n2: Natural] { ord/gte[n1, n2] } // greater than or equal to
-  pred lte [n1, n2: Natural] { ord/lte[n1, n2] } // less than or equal to
-  fun max [ns: set Natural] : lone Natural { ord/max[ns] } //returns the maximum integer in ns 
-  fun min [ns: set Natural] : lone Natural { ord/min[ns] } // returns the minimum integer in ns
+.. als:function:: inc [n: Natural]
 
-
+  :rtype: ``one Natural``
+
+  Returns `n + 1`.
+
+.. als:function:: dec [n: Natural]
+
+  :rtype: ``one Natural``
+
+  Returns `n - 1`.
+
+
+.. als:function:: add [n1, n2: Natural]
+
+  :rtype: ``one Natural``
+
+  Returns `n1 + n2`.
+
+.. als:function:: sub [n1, n2: Natural]
+
+  :rtype: ``one Natural``
+
+  Returns `n1 - n2`.
+
+.. als:function:: mul [n1, n2: Natural]
+
+  :rtype: ``one Natural``
+
+  Returns `n1 * n2`.
+
+.. als:function:: div [n1, n2: Natural]
+
+  :rtype: ``one Natural``
+
+  Returns `n1 / n2`.
+  
+.. als:function:: max [ns: set Natural]
+
+  :rtype: ``one Natural``
+
+  Returns the maximum integer in ns.
+
+.. als:function:: min [ns: set Natural]
+
+  :rtype: ``one Natural``
+
+  Returns the minimum integer in ns.
+
+
+Predicates
+==========
+
+.. als:predicate:: gt [n1, n2: Natural]
+  
+  `True` iff n1 is greater than n2.
+
+.. als:predicate:: gte [n1, n2: Natural]
+  
+  `True` iff n1 is greater than or equal to n2.
+
+.. als:predicate:: lt [n1, n2: Natural]
+  
+  `True` iff n1 is less than n2.
+
+.. als:predicate:: lte [n1, n2: Natural]
+  
+  `True` iff n1 is less than or equal to n2.
 
