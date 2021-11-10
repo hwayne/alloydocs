@@ -12,10 +12,10 @@ overflows are silently truncated to the current bitwidth using the 2's complemen
 arithmetic, unless the ''forbid overfows'' option is turned on, in which case only 
 models that do not have any overflows are analyzed. 
 
-.. warning:: The main challenge with this module is the distinction between `Int` and `int`. 
-`Int` is the set of integers that have been instantiated, whereas `int` returns the value of 
-an `Int`. You have to explicitly write `int i` to be able to add, subtract, and compare 
-`Int`s.
+.. warning:: The main challenge with this module is the distinction between ``Int`` and ``int``. 
+``Int`` is the set of integers that have been instantiated, whereas ``int`` returns the value of 
+an ``Int``. You have to explicitly write ``int i`` to be able to add, subtract, and compare 
+``Int``s.
 
 
 .. code:: alloy
@@ -34,7 +34,7 @@ an `Int`. You have to explicitly write `int i` to be able to add, subtract, and 
 
 To try this module out, in Alloy Analyzer's evaluator, you may also issue the 
 following commands (suppose that allow generated a set with numbers ranging 
-from `-8` to `7`):
+from ``-8`` to ``7``):
 
 .. code:: alloy
 
@@ -52,31 +52,31 @@ Functions
 
   :rtype: ``one Int``
 
-  Returns `n1 + n2`.
+  Returns ``n1 + n2``.
 
 .. als:function:: plus [n1, n2: Int]
 
   :rtype: ``one Int``
 
-  Returns `n1 + n2`.
+  Returns ``n1 + n2``.
 
 .. als:function:: sub [n1, n2: Int]
 
   :rtype: ``one Int``
 
-  Returns `n1 - n2`.
+  Returns ``n1 - n2``.
 
 .. als:function:: minus [n1, n2: Int]
 
   :rtype: ``one Int``
 
-  Returns `n1 - n2`.
+  Returns ``n1 - n2``.
 
 .. als:function:: mul [n1, n2: Int]
 
   :rtype: ``one Int``
 
-  Returns `n1 * n2`.
+  Returns ``n1 * n2``.
 
 .. als:function:: div [n1, n2: Int]
 
@@ -95,7 +95,7 @@ Functions
 
   :rtype: ``one Int``
 
-  Returns the unique integer that satisfies `a = ((a/b)*b) + remainder`.
+  Returns the unique integer that satisfies ``a = ((a/b)*b) + remainder``.
 
 .. als:function:: negate [n: Int]
 
@@ -108,15 +108,15 @@ Functions
   :rtype: ``one Int``
 
   Returns the signum of n (aka sign or sgn). In particular, 
-  `n < 0 => ( 0 - 1 ) else ( n > 0 => 1 else 0 )`.
+  ``n < 0 => ( 0 - 1 ) else ( n > 0 => 1 else 0 )``.
 
 .. als:function:: int2elem [i: Int, next: univ->univ, s: set univ]
 
   :rtype: ``lone s``
 
-  Returns the ith element (zero-based) from the `set s`
-  in the ordering of `next`, which is a linear ordering
-  relation like that provided by `util/ordering`.
+  Returns the ith element (zero-based) from the ``set s``
+  in the ordering of ``next``, which is a linear ordering
+  relation like that provided by `ordering`.
 
 .. als:function:: elem2int [e: univ, next: univ->univ]
 
@@ -124,7 +124,7 @@ Functions
 
   Returns the index of the element (zero-based) in the
   ordering of next, which is a linear ordering relation
-  like that provided by `util/ordering`.
+  like that provided by `ordering`.
 
 .. als:function:: max
 
@@ -191,40 +191,40 @@ Predicates
 
 .. als:predicate:: eq [n1, n2: Int]
   
-  `True` iff n1 is equal to n2.
+  ``True`` iff n1 is equal to n2.
 
 .. als:predicate:: gt [n1, n2: Int]
   
-  `True` iff n1 is greater than n2.
+  ``True`` iff n1 is greater than n2.
 
 .. als:predicate:: gte [n1, n2: Int]
   
-  `True` iff n1 is greater than or equal to n2.
+  ``True`` iff n1 is greater than or equal to n2.
 
 .. als:predicate:: lt [n1, n2: Int]
   
-  `True` iff n1 is less than n2.
+  ``True`` iff n1 is less than n2.
 
 .. als:predicate:: lte [n1, n2: Int]
   
-  `True` iff n1 is less than or equal to n2.
+  ``True`` iff n1 is less than or equal to n2.
 
 .. als:predicate:: zero [n: Int]
   
-  `True` iff n is equal to `0`.
+  ``True`` iff n is equal to ``0``.
 
 .. als:predicate:: pos [n: Int]
   
-  `True` iff n is positive.
+  ``True`` iff n is positive.
 
 .. als:predicate:: neg [n: Int]
   
-  `True` iff n is negative.
+  ``True`` iff n is negative.
 
 .. als:predicate:: nonpos [n: Int]
   
-  `True` iff n is non-positive.
+  ``True`` iff n is non-positive.
 
 .. als:predicate:: nonneg [n: Int]
   
-  `True` iff n is non-negative.
+  ``True`` iff n is non-negative.
