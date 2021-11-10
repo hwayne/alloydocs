@@ -91,9 +91,9 @@ Conventionally, state-change predicates are written to take two time parameters,
 
 ::
 
-  pred release[k: Key, t, t': Time] {
+  pred release[k: Key, t, t": Time] {
     t in k.pressed
-    t' not in k.pressed
+    t" not in k.pressed
   }
 
 
@@ -144,10 +144,10 @@ The trace must fully cover what happens to all dynamic signatures. If not, weird
   fact Trace {
     at.first = history.first -- everybody starts with their initial page in history
     all t: Time - last |
-      let t' = t.next {
+      let t" = t.next {
         one u: User |
-          u.stay[t, t'] or
-          some p: Page | u.goto[p, t, t']
+          u.stay[t, t"] or
+          some p: Page | u.goto[p, t, t"]
       }
   }
 

@@ -26,7 +26,7 @@ face Trace {
   all t: Time - last |
     some k: Key {
       changed[k, t]
-      all k': Key - k |
+      all k": Key - k |
         not changed[k, t]
     }
 }
