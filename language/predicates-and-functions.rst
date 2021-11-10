@@ -80,8 +80,11 @@ The following two are equivalent:
 Functions
 =============
 
-Alloy functions are equivalent to programming functions. They have the
-same structure as predicates, but also return a value:
+Alloy functions have the same structure as predicates but also return a value.
+Unlike functions in programming languages, they are always executed within an execution run, 
+so their results are available in the visualisation and the evaluator even if you haven't 
+called them directly. This is very useful for some visualisations, although the supporting
+code can be disorienting when transitioning from "regular" programming languages.
 
 .. code:: alloy
 
