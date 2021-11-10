@@ -196,7 +196,7 @@ add_function_parentheses = False
 
 # So we get the advanced directive
 def setup(app):
-    app.add_stylesheet('custom.css')
+    app.add_css_file('custom.css')
 
 """
 https://samprocter.com/2014/06/documenting-a-language-using-a-custom-sphinx-domain-and-pygments-lexer/
