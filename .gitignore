@@ -1,5 +1,5 @@
 # sphinx build folder
-_build
+_build/
 
 # Compiled source #
 ###################
