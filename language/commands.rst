@@ -128,7 +128,7 @@ We can write the following scopes:
    general scope.
 -  ``run {} for 5 but 2 A, 3 B``: Places scopes on A and B.
 
-If you are placing scopes on all of the signatures, the ``for N except``
+If you are placing scopes on all of the signatures, the ``for N but``
 is unnecessary: the last command can be written as
 ``run {} for 2 A, 3 B``.
 
