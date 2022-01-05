@@ -119,7 +119,7 @@ are written as :ref:`functions`:
    add[1, 2]
    sub[1, 2]
    mul[1, 2]
-   div[3, 2] -- integer divison, drop remainder
+   div[3, 2] -- integer division, drop remainder
    rem[1, 2] -- remainder
 
 You can use receiver syntax for this, and write ``add[1, 2]`` as

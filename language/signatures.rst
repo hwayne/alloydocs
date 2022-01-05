@@ -98,7 +98,7 @@ Relations *can* refer to the same signature. This is valid:
 .. image:: img/self-relation.png
 
 Alloy can generate models where a relation points from an atom to itself, aka a "self-loop". For
-this reason we often want to add contraints to our model, such as
+this reason we often want to add constraints to our model, such as
 :ref:`facts` or :ref:`predicates`.
 
 .. note::

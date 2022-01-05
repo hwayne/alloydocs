@@ -32,7 +32,7 @@ Functions
 
   Returns the set of nodes that *are not connected to* by any other node.
 
-  .. warning:: this is *not* the same meaning of *root* as in the `rootedAt` predicate! For the predicate, a *root* is a node that transitively covers the whole graph. Interally, ``util/graph`` uses ``rootedAt`` and not ``roots``.
+  .. warning:: this is *not* the same meaning of *root* as in the `rootedAt` predicate! For the predicate, a *root* is a node that transitively covers the whole graph. Internally, ``util/graph`` uses ``rootedAt`` and not ``roots``.
 
 .. als:function:: leaves[r: node-> node]
 
