@@ -31,7 +31,7 @@ In this case, "set" refers to any nodes that are important to the visualizer, su
 The following settings are universal to all nodes:
 
 - **Color**, **Shape**, and **Border**.
-- **Name** (to the left of color): What to call the nodes. This does not effect the evaluator or tree, text, and table views.
+- **Name** (to the left of color): What to call the nodes. This does not affect the evaluator or tree, text, and table views.
 - **Show**: Whether or not the node is visible in the visualization at all. Default True.
 - **Hide Unconnected Nodes**: If a node doesn't have any relation to any other node, hide the node. Default True.
 

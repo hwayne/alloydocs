@@ -33,7 +33,7 @@ the final output. If you see something
 Then it will not be rendered. If I used a special ``run`` predicate to
 generate a particular visualization, I put it in a comment.
 
-Anything with a ``[⋇]`` is an advanced topic and unecessary to learn if you're just a beginner.
+Anything with a ``[⋇]`` is an advanced topic and unnecessary to learn if you're just a beginner.
 
 Issues with the documentation can be raised `here <https://github.com/hwayne/alloydocs>`__.
 

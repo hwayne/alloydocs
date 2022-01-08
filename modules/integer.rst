@@ -9,7 +9,7 @@ Emulates integers.
 
 A collection of utility functions for using Integers in Alloy. Note that integer 
 overflows are silently truncated to the current bitwidth using the 2's complement 
-arithmetic, unless the ''forbid overfows'' option is turned on, in which case only 
+arithmetic, unless the ''forbid overflows'' option is turned on, in which case only
 models that do not have any overflows are analyzed. 
 
 .. warning:: The main challenge with this module is the distinction between ``Int`` and ``int``. 
