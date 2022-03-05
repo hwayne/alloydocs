@@ -20,7 +20,7 @@ an ``Int``. You have to explicitly write ``int i`` to be able to add, subtract, 
 
 .. code:: alloy
 
-  open util/integers
+  open util/integer
   
   fact ThreeExists { // there is some integer whose value is 3
     some x: Int | int x = 3
