@@ -1,6 +1,6 @@
 # Alloydocs
 
-This is the repository for development of the [Alloy](http://www.alloytools.org/) documentation. The documentation is currently hosted [here](https://github.com/hwayne/alloydocs/). This readme is for people who are interested in building and contributing it.
+This is the repository for development of the [Alloy](http://www.alloytools.org/) documentation. The documentation is currently hosted [here](https://alloy.readthedocs.io/en/latest/language/index.html). This readme is for people who are interested in building and contributing it.
 
 ## Building
 
