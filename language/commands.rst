@@ -178,7 +178,7 @@ In contrast, special scopes *may not* be placed on `subset types <subtype in>`. 
 
    sig Plant {}
 
-   sig Seedling in Plant {}
+   sig Seedling extends Plant {}
 
    run {} for 4 Plant, exactly 2 Seedling
 
