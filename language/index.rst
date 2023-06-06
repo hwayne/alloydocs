@@ -9,6 +9,7 @@ Language
   expressions-and-constraints
   predicates-and-functions
   commands
+  time
   modules
   
 

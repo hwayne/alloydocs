@@ -188,3 +188,24 @@ need to scope on a subtype, use a constraint:
 .. code:: alloy
 
    run {#Seedling = 2} for 4 Plant
+
+
+.. _steps:
+
+Steps
+--------
+
+For `dynamic <time>` models, the number of steps is specified as ``m..n steps``, where ``m`` is the minimum number of steps and ``n`` is the maximum. For example:
+
+.. todo:: Example goes here
+
+Writing ``for n steps`` is equivalent to ``for 1..n steps``. If no steps count is given, the number defaults to 10.
+
+* ``n steps``, which is equivalent to ``1..n steps``
+* ``m.. steps``, which allows for an arbitrary number of steps. This requires the use of an SMT solver, such as NuSMV, and may be very memory intensive.
+
+
+.. todo:: Check the above
+
+
+.. note:: ``m.. steps`` is always guaranteed to eventually work, because 

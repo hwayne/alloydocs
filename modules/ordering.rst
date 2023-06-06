@@ -40,11 +40,12 @@ ordering
 
   In particular, be careful when using ``ordering`` as part of an assertion: the assertion may pass because of the implicit constraint!
 
+.. note::
+
+  Historically, ``ordering`` was used to model :ref:`dynamic systems`.
+
 .. seealso::
 
-  Module :mod:`time`
-
-    Adds additional convenience macros for the most common use case of ordering.
 
   `Sequences <seq>`
 

@@ -1,10 +1,14 @@
 .. _dynamics:
 
-++++++++++++++
-Dynamic Models
-++++++++++++++
++++++++++++++++++++++
+Legacy Dynamic Models
++++++++++++++++++++++
 
-A **dynamic model** represents something changing over time. Alloy does not have a first-class notion of time, and dynamics must be encoded as part of the relationships. This is normally done by placing an `ordering` on some signature, which then used to emulate time. There are several common ways of doing this.
+A **dynamic model** represents something changing over time. As of Alloy 6, you can model dynamic systems with the `time` functions. This page is about how dynamics *used* to be modeled in Alloy, in case you need to read an old spec.
+
+---
+
+Dynamics must be encoded as part of the relationships. This is normally done by placing an `ordering` on some signature, which then used to emulate time. There are several common ways of doing this.
 
 .. seealso::
 
