@@ -20,7 +20,7 @@ sys.path.append(os.path.abspath('./utils'))
 # -- Project information -----------------------------------------------------
 
 project = 'Alloy Documentation'
-copyright = '2020'
+copyright = '2023'
 author = 'Hillel Wayne'
 
 # The short X.Y version
