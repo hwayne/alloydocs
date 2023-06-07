@@ -1,10 +1,10 @@
 .. module:: time
 
-++++
-time
-++++
++++++++++++++
+time (legacy)
++++++++++++++
 
-Automatically imports an ordered ``Time`` signature to your spec.
+Automatically imports an ordered ``Time`` signature to your spec. This used to be used for modeling time before Alloy 6, but now there is a :ref:`native feature <time>` for it. This module is now deprecated, but you may still see older specifications that use it.
 
 .. warning::
 

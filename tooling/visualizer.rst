@@ -22,7 +22,7 @@ One counterexample to ``RootTop`` is a directory that contains the root. In the 
 .. image:: img/visualizer.png
 
 
-This page will cover all functionality of the visualizer.
+This page will cover all functionality of the visualizer. See below for models using :ref:`time`.
 
 .. attention:: The XML for this example can be downloaded :download:`here <specs/visualizer-counterexample.xml>`.
 
@@ -141,3 +141,32 @@ Projection
 Projections break a complex model into multiple subviews.  Instead of showing relations from the projected signature, each relation will be represented as a text label on the corresponding targets of the relation.
 
 .. todo:: The current example of the visualizer doesn't have projections, find a better example.
+
+
+.. _visualizer_temporal_models:
+
+Temporal Models
+---------------
+
+Models that use :ref:`variables <var>` are temporal models, and are shown differently. Given the following model
+
+.. literalinclude:: specs/visualizer.als
+
+The visualizer might instead look like this:
+
+.. image:: img/temporal_model.png
+
+This represents a single "trace", or sequence of steps that represent the changing variable. On the left is the *current* state, on the right is the *next* state. Clicking on a state in the sequence will jump to that state.
+
+In the evaluator, ``connected_to`` refers to the left state, and ``connected_to'``  refers to the right state. Text and table views will only show the current state.
+
+Instead of "Next [Solution]", there are four more specific options:
+
+#. **New Config**: Changes everything, like "Next" does in non-temporal models.
+#. **New Trace**: Keeps the current config and initial state, but finds a new trace.
+#. **New Init**: Keeps the non-variable signatures and relations, but changes the initial values of the variables (also giving a new trace). 
+#. **New Fork**: Can only be used when looking at a later step. Keeps the config and all prior steps in the trace, but finds a different successor step.
+
+In order of severity, New Config changes more than New Init, which changes more than New Trace, which changes more than New Fork.
+
+.. note:: You'll get an error if you try to find a new trace after having found a new fork. You'll need to find a new config first.

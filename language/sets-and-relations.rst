@@ -33,7 +33,6 @@ Everything in Alloy is a set. If ``S1`` is a ``Student`` atom, then
 There are also two special sets:
 
 .. _none:
-
 .. _univ:
 
 -  ``none`` is just the empty set. Saying ``no Set`` is the same as saying ``Set = none``. See :ref:`expressions`.

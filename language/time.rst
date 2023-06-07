@@ -76,6 +76,8 @@ To model a "change", we relate the values of a variable between two steps.  If `
 
 In this example, ``connect`` is true or false in every step. In steps where it is true, the client is not connected to the server *and* in the next step, it is connected to the server. This represents the state of the system changing. 
 
+.. _prime:
+
 ``'`` is also called the :dfn:`prime` operator. Combining primed predicates with temporal operators gives us a simple way to model system dynamics.
 
 .. code:: alloy

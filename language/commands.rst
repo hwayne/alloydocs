@@ -195,7 +195,7 @@ need to scope on a subtype, use a constraint:
 Steps
 --------
 
-For `dynamic <time>` models, the number of steps is specified as ``m..n steps``, where ``m`` is the minimum number of steps and ``n`` is the maximum. For example:
+For :doc:`dynamic <time>` models, the number of steps is specified as ``m..n steps``, where ``m`` is the minimum number of steps and ``n`` is the maximum. For example:
 
 .. todo:: Example goes here
 
