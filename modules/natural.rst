@@ -1,4 +1,4 @@
-.. module:: naturals
+.. als:module:: naturals
 
 
 +++++++++++++++
@@ -26,7 +26,7 @@ be present.
 To try this module out, in Alloy Analyzer's evaluator, you may invoke the 
 function defined above as follows:
 
-.. code:: alloy
+.. code:: none
 
   sum [natural/Natural1, natural/Natural1]
     {natural/Natural$2}

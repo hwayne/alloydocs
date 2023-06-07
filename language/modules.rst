@@ -58,7 +58,7 @@ A parameterized module can be imported multiple times using `namespaces`.
 
 .. note::
 
-  The following built-in modules are parameterized: `ordering`, :mod:`time`, `graph`, and `sequence`.
+  The following built-in modules are parameterized: :mod:`ordering`, :mod:`time`, `graph`, and sequence.
 
 Creating Modules
 ========================

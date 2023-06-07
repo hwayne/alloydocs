@@ -1,4 +1,4 @@
-.. module:: ordering
+.. als:module:: ordering
 
 ++++++++
 ordering
@@ -39,17 +39,6 @@ ordering
     run {#S = 2} for 3
 
   In particular, be careful when using ``ordering`` as part of an assertion: the assertion may pass because of the implicit constraint!
-
-.. note::
-
-  Historically, ``ordering`` was used to model :ref:`dynamic systems`.
-
-.. seealso::
-
-
-  `Sequences <seq>`
-
-    For writing ordered relations vs placing top-level ordering on signatures.
 
 Functions
 ---------

@@ -1,4 +1,4 @@
-.. module:: integer
+.. als:module:: integer
 
 
 +++++++++++++++
@@ -12,10 +12,9 @@ overflows are silently truncated to the current bitwidth using the 2's complemen
 arithmetic, unless the ''forbid overflows'' option is turned on, in which case only
 models that do not have any overflows are analyzed. 
 
-.. warning:: The main challenge with this module is the distinction between ``Int`` and ``int``. 
-``Int`` is the set of integers that have been instantiated, whereas ``int`` returns the value of 
-an ``Int``. You have to explicitly write ``int i`` to be able to add, subtract, and compare 
-``Int``s.
+.. warning::
+  
+  The main challenge with this module is the distinction between ``Int`` and ``int``. ``Int`` is the set of integers that have been instantiated, whereas ``int`` returns the value of an ``Int``. You have to explicitly write ``int i`` to be able to add, subtract, and compare ``Ints``.
 
 
 .. code:: alloy
@@ -116,7 +115,7 @@ Functions
 
   Returns the ith element (zero-based) from the ``set s``
   in the ordering of ``next``, which is a linear ordering
-  relation like that provided by `ordering`.
+  relation like that provided by :als:mod:`ordering`.
 
 .. als:function:: elem2int [e: univ, next: univ->univ]
 
@@ -124,7 +123,7 @@ Functions
 
   Returns the index of the element (zero-based) in the
   ordering of next, which is a linear ordering relation
-  like that provided by `ordering`.
+  like that provided by :als:mod:`ordering`.
 
 .. als:function:: max
 

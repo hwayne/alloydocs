@@ -1,4 +1,4 @@
-.. module:: graph
+.. als:module:: graph
 
 ++++++++++++++
 graph
@@ -40,7 +40,7 @@ Functions
 
   Returns the set of nodes that *do not connect to* any other node.
 
-  .. note:: If ``r`` is empty, ``roots[r] = leaves[r] = Node``. If ``r`` is undirected or contains enough self loops, ``roots[r] = leaves[r] =``  `none`.
+  .. note:: If ``r`` is empty, ``roots[r] = leaves[r] = Node``. If ``r`` is undirected or contains enough self loops, ``roots[r] = leaves[r] =``  :ref:`none <none>`.
 
 
 .. als:function:: innerNodes[r: node-> node]

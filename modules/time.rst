@@ -1,4 +1,4 @@
-.. module:: time
+.. als:module:: time
 
 +++++++++++++
 time (legacy)

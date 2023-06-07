@@ -1,4 +1,4 @@
-.. module:: boolean
+.. als:module:: boolean
 
 
 +++++++++++++++

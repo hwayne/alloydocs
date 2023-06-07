@@ -4,7 +4,7 @@
 Legacy Dynamic Models
 +++++++++++++++++++++
 
-A **dynamic model** represents something changing over time. As of Alloy 6, you can model dynamic systems with the `time` functions. This page is about how dynamics *used* to be modeled in Alloy, in case you need to read an old spec.
+A **dynamic model** represents something changing over time. As of Alloy 6, you can model dynamic systems with the :ref:`time` functions. This page is about how dynamics *used* to be modeled in Alloy, in case you need to read an old spec.
 
 ---
 

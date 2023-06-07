@@ -12,6 +12,7 @@ Given the following model
 ..
   
   ::
+    
     fact "demo" {
       let unroot = Dir - Root |
         contents = Root -> unroot + unroot -> Dir + ((Dir - Root) -> File)
