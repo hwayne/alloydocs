@@ -112,7 +112,7 @@ htmlhelp_basename = 'AlloyDocumentationdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
-
+latex_engine = "xelatex" # solves problem of unicode characters
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
