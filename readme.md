@@ -11,7 +11,7 @@ The docs currently run on Sphinx. You can install Sphinx with [these instruction
 python -m pip install sphinx-rtd-theme
 ```
 
-Docs can be built with ``make html``.
+Docs can be built with ``make html``. Single file PDF version can be built with ``make latexpdf`` (requires LaTeX installed).
 
 ## Development
 
