@@ -30,7 +30,7 @@ In our code:
     premium: Bool
   }
 
-Booleans created in this matter are not "true" booleans and cannot be used as part of regular `constraints`, IE you cannot do ``bool1 && bool2``. Instead you must use the dedicated boolean predicates, below. As such, ``boolean`` should be considered a proof-of-concept and is generally **not recommended** for use in production specs. You should instead represent booleans using `subtyping <boolean-subtyping>`.
+Booleans created in this matter are not "true" booleans and cannot be used as part of regular `constraints`, IE you cannot do ``bool1 && bool2``. Instead you must use the dedicated boolean predicates, below. As such, ``boolean`` should be considered a proof-of-concept and is generally **not recommended** for use in production specs. You should instead represent booleans using :ref:`subtyping <boolean-subtyping>`.
 
 Functions
 ==========

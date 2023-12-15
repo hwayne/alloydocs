@@ -105,16 +105,6 @@ List of Operators
 
 Alloy operators include both *future* and *past* operators. Operators are true and false for a specific step.
 
-always
-eventually
-once
-after
-after | before
-always | historically
-eventually | once
-until | since
-releases | triggered
-
 .. list-table:: Future temporal operators
   :header-rows: 1
   
