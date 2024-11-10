@@ -114,8 +114,8 @@ Predicates
 
 .. als:predicate:: partialOrder[r: univ -> univ, s: set univ]
 
-  ``r`` is a partial order over the set ``s``.
+  ``r`` is a partial order over the set ``s``: ``preorder[r, s] and antisymmetric[r]``
 
 .. als:predicate:: totalOrder[r: univ -> univ, s: set univ]
 
-  ``r`` is a total order over the set ``s``.
+  ``r`` is a total order over the set ``s``: ``partialOrder[r, s] and complete[r, s]``
