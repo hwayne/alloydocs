@@ -21,8 +21,8 @@ ordering
 
 ``ordering`` can only be instantiated once per signature. You can, however, call it for two different signatures::
 
-  open util/module[Thing1] as u1
-  open util/module[Thing2] as u2
+  open util/ordering[Thing1] as u1
+  open util/ordering[Thing2] as u2
 
   sig Thing1 {}
   sig Thing2 {}
